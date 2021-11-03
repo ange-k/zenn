@@ -1,0 +1,1 @@
+O'Reilly 初めてのPerl 第7版 P60より.
