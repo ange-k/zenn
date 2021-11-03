@@ -69,3 +69,14 @@ Perlがわからないんじゃ「レガシーコードの脱却」を読んだ�
 - MacOS BigSur
 - anyenvでいれたplenvでいれたperl5.16.0
 - [perl-buildをプラグインで使う点に留意](https://qiita.com/narita_cpp/items/03e55b9acf4b3fbed99c)
+
+# Perlを理解するためのポイント
+## コンテキストを理解する
+スカラーコンテキストとリストコンテキストがある. コンテキストをみて動作を変える処理がPerlには存在する.
+
+```perl
+# 下記2つはSTDINのとる振る舞いが異なる.
+my $value = <STDIN>;
+my $list = <STDIN>;
+```
+    
