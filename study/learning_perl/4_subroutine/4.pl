@@ -10,17 +10,20 @@
 
 my @queue = ();
 
-while($name = <STDIN>) {
-    chomp($name);
-    $size = @queue;
-
+sub greet {
+    my $name = shift;
+    my $size = @queue;
     if ($size == 0) {
         print "Hi $name! You are this first one here!\n";
     }
     else {
-        $before = shift @queue;
+        my $before = shift @queue;
         print "Hi $name! $before is also here!\n";
     }
+}
 
+while(my $name = <STDIN>) {
+    chomp($name);
+    greet($name);
     push @queue, $name;
 }
