@@ -193,6 +193,16 @@ kinesisは配信ストリームを管理するプラットフォームです。�
 ![kinesis](/images/metrics/kinesis3.png)
 ![kinesis](/images/metrics/kinesis4.png)
 
+S3バケットプレフィックスは下記のように指定します
+```
+year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}
+
+エラー出力はこちら
+year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/!{firehose:error-output-type}
+```
+year,monthなどを指定している点がS3におけるパーティションの指定になります。
+Athenaで検索する際などにスキャン範囲を限定させる際に役に立ちます。(今回の検証では意識しませんが)
+
 kinesisを作成し終わったら、ECSのタスク実行ロールに「`AmazonKinesisFirehoseFullAccess`」を付与しておきましょう。  
 よりよい方法は、[作成したkinesisのみにアクセスできるように指定](https://docs.aws.amazon.com/ja_jp/firehose/latest/dev/controlling-access.html#access-to-firehose)する方法です。
 
@@ -246,6 +256,9 @@ log_group_nameと同名のログがCloudWatchに作成されていれば、そ�
 ## S3の確認
 少し時間がかかりますが、S3にもログが転送されます(ActiveRecordのSQLログ)
 ![s3](/images/metrics/s3-2.png)
+
+なお、S3に保存されているファイルはkinesisによりgzip圧縮されるように設定していますが、UIからダウンロードした際には展開された状態で落ちてきます。  
+**しかしファイル名の拡張子は`gz`のままなので注意してください。**
 
 # 参考
 - [awslogs ログドライバーを使用する](https://docs.aws.amazon.com/ja_jp/AmazonECS/latest/developerguide/using_awslogs.html)
