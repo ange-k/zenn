@@ -156,7 +156,7 @@ log_router本体のログはCloudWatchに流しましょう。設定ファイル
 ![log](/images/metrics/log4.png)
 
 をクリックし、タスク定義のjsonを開きます。
-`log_router`の設定ある`firelensConfiguration`を下記のように書き換えます。
+`log_router`の設定にある`firelensConfiguration`を下記のように書き換えます。
 もし、項目がない場合は追加してください
 
 ```json:ecs
@@ -179,6 +179,8 @@ log_router本体のログはCloudWatchに流しましょう。設定ファイル
 
 ## S3/Kinesisの準備
 今回設定したFluentBitはActiveRecordのログをS3にぶん投げるので、対応するKinesisとS3の設定が必要です。
+
+(これによってCloudwatchの課金を避けられます。代わりにKinesisやS3の料金が発生しますがこちらのほうが安いです)
 
 ### S3
 S3はデフォルトの設定のまま作成してください。KinesisはS3へのアクセス許可を付与するので、特に公開設定も不要です。

@@ -34,14 +34,12 @@ FargateとFireLensを使うことにより、ログの出力先の設定はサ�
 (アプリケーションのログ出力はFluentBitがハンドリングしてくれているので、出力先を変更するだけの話になる。FluentBitをやめることはできないがこれはOSSなのでベンダーロックインはされない)
 
 ## FireLensでできること
-FireLensはFluentBitの機能を内包するので、FluentBitにできることはすべてできます。  
+FireLensはFluentBitを利用するので、FluentBitにできることはすべてできます。  
 具体例として、Classmethodさんの記事を紹介致します。
 
 - [特定条件に当てはまるログを削除](https://dev.classmethod.jp/articles/filtering-healthchecklog-with-fluent-bit/)
 - [すべてのログをS3へ、エラーをCloudWatchへ](https://dev.classmethod.jp/articles/storing-error-logs-and-all-logs-separately-in-firelens/)
 - [特定json keyだけCloudWatchに連携する](https://dev.classmethod.jp/articles/firelens-cloudwatchlogs-specific-json-key/)
-
-FluentBitがAWSと連携するためのプラグインを山程抱えているもの、と捉えるのがわかりやすいと思います。
 
 ## 満たしたい要件
 今回取り組むRailsアプリケーションでは、下記の要件を満たす構成にしたいと思います。
@@ -179,6 +177,7 @@ class LogFormatter
 end
 ```
 例として、下記3つを定義しました。
+ここで定義するルールが、アプリケーションが発するメトリクスの表現力を決めてしまうので、本番で採用する際には必要最低限かつ表現したいメトリクスを表現できるように設計しましょう。
 
 - basic
   - 単純なメッセージログを出力するためのフォーマット。contentに入れた内容を表示する。

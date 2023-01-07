@@ -1,6 +1,6 @@
-title: "AWS CloudWatchではじめるアプリケーション ログ/メトリクス 監視入門"
-summary: "対象読者: ログ監視はなんとなくわかるけどメトリクス監視とは何かよくわからない人。\n適当にログをクラウドで貯めて監視しようとすると、ビジネスが成長する段階で困ることになるよ、と言われてもピンとこない人。"
-topics: ['CloudWatch', 'aws', '監視']
+title: "AWS CloudWatchで体験するアプリケーション ログ/メトリクス 監視入門"
+summary: "対象読者: メトリクスって何それ美味しいの？という方。\nEC2やオンプレミスからECSに移行しようと思っているけどログどうしよう？という方。\nAPIのレスポンスタイムをアラームのトリガーにしたいな、と思っている方。\n\n基礎知識の要求: AWS ECS, Docker, Rails\n\n扱うもの:CloudWatch,FireLens,Athena,FluentBit,Kinesis,S3"
+topics: ['CloudWatch', 'aws', '監視', 'fluentbit', 'athena']
 published: false
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
