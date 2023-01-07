@@ -12,6 +12,8 @@ free: true
 本稿においては、FluentBitをかんたんに体験いただくためにdocker-composeを使用して、その結果を眺めてみることとします。
 ログを吐き出すアプリケーションコードは何でも良いのですが、サンプルを動かしたい場合はgithubよりサンプルコードをダウンロードして動かしてみてください。
 
+https://github.com/ange-k/metrics-sample
+
 ## docker-compose
 今回利用するdocker-composeは下記のとおりです。
 

@@ -21,3 +21,6 @@ ECSから発生したログをFirelensを使ってログルーティングし、
 
 ## ゴール
 ![](/images/metrics/metric-sample.jpg)
+
+## サンプルコード
+https://github.com/ange-k/metrics-sample

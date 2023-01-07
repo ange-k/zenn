@@ -11,6 +11,9 @@ free: true
 今回は極力ログルーティングに関係のない話を控えるため、ECSへのデプロイの自動化などは取り扱いません。  
 愚直に必要なイメージをECRに登録し、そのイメージを使ってECSを起動していきます。
 
+サンプルコードはこちらです。
+https://github.com/ange-k/metrics-sample
+
 # DockerImage
 RailsのDockerfileについては、ローカル環境と同様のものを使用できます。
 
