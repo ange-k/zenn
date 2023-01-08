@@ -288,7 +288,7 @@ logdata.user_show: [1672918013.000000000, {"host":"96e9f7d0b7ef","application":"
 ```
 payloadフィールドにcurl実行時につけたデータが含まれていることがわかります。
 
-## おわりに
+## 章末
 なんとなくfluent bitのイメージができたでしょうか。
 
 AWSではoutputプラグインとして、ファイル書き込みではなくCloudWatchやKinesisを指定することになりますが、fluent bitの基本は変わりません。

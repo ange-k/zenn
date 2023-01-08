@@ -1,7 +1,7 @@
 title: "AWS CloudWatchで体験するアプリケーション ログ/メトリクス 監視入門"
-summary: "対象読者: メトリクスって何それ美味しいの？という方。\nEC2やオンプレミスからECSに移行しようと思っているけどログどうしよう？という方。\nAPIのレスポンスタイムをアラームのトリガーにしたいな、と思っている方。\n\n基礎知識の要求: AWS ECS, Docker, Rails\n\n扱うもの:CloudWatch,FireLens,Athena,FluentBit,Kinesis,S3"
+summary: "ECS(Fargate)のアプリケーションから構造化ログをFluentBitでログルーティングしてCloudwatchやS3に送って、検索・統計・解析する基礎が載っています。構造化ログやメトリクスの概念について解説を入れてから、実際にAWSで構築します。\n\n対象読者: メトリクスって何それ美味しいの？という方。\nEC2やオンプレミスからECSに移行しようと思っているけどログどうしよう？という方。\nAPIのレスポンスタイムをアラームのトリガーにしたいな、と思っている方。\n昔のCloudwatchは真っ当に統計もできずクソだったけど今はどうなん？って方。\n\n基礎知識の要求: AWS ECS(設定はある程度載せてます), Docker(fileはサンプルを提供します), Rails(ログを送るアプリケーションというだけです)\n\n扱うもの:CloudWatch,FireLens,Athena,FluentBit,Kinesis,S3"
 topics: ['CloudWatch', 'aws', '監視', 'fluentbit', 'athena']
-published: false
+published: true
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
@@ -13,4 +13,3 @@ chapters:
   - step6
   - step7
   - step8
-  
